@@ -21,6 +21,7 @@ jobs:
       - name: Prepare env
         run: |
           sudo mv .ant $HOME
+          sudo apt-get install -y libogg
           autoconf
           ./configure
           ant -f build-dtd.xml          
