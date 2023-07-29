@@ -20,7 +20,7 @@ jobs:
 
       - name: Prepare env
         run: |
-          mv .ant $HOME
+          sudo mv .ant $HOME
           autoconf
           ./configure
           ant -f build-dtd.xml          
