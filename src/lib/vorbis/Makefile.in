@@ -4,7 +4,7 @@
 SHELL = /bin/sh
 
 prefix=@prefix@
-JAVADIR=$(prefix)/lib/jvm/java-17-openjdk
+JAVADIR=$(prefix)
 REL_JAVAEXTLIBPATH=@REL_JAVAEXTLIBPATH@
 JAVAEXTLIBPATH=$(JAVADIR)/$(REL_JAVAEXTLIBPATH)
 OSNAME=@OSNAME@
