@@ -1,5 +1,8 @@
 name: Compile and package
-on: [push]
+on:
+  push:
+    tags:
+      - '*'
 jobs:
   CompipleAndPackage:
     runs-on: ubuntu-latest
@@ -30,7 +33,19 @@ jobs:
         run: ant
 
       - name: Build vorbis
-        run: make -C src/lib/vorbis
+        run: | 
+          make -C src/lib/vorbis
+          zip libtritonusvorbis.zip src/lib/vorbis/libtritonusvorbis.so*
 
       - name: Build lame
-        run: make -C src/lib/lame
+        run: |
+          make -C src/lib/lame
+          zip liblametritonus.zip src/lib/lame/liblametritonus.so*         
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            src/lib/vorbis/libtritonusvorbis.zip
+            src/lib/lame/liblametritonus.zip
