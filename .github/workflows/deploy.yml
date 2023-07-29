@@ -51,7 +51,9 @@ jobs:
 
       - name: Deploy maven
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          mkdir ~/.m2
+          echo "<settings><servers><server><id>github</id><username>marcelopio</username><password>${GITHUB_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
           mvn deploy:deploy-file  -Durl=https://maven.pkg.github.com/marcelopio/tritonus-all -DrepositoryId=github -Dfile=dist/tritonus_vorbis-0.3.8_beta01.jar -DartifactId=tritonus_vorbis -DgroupId=org.tritonus -Dversion=0.3.8_beta1 -Dpackaging=jar -DgeneratePom=true
                                   
