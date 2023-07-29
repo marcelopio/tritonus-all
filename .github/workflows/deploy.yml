@@ -53,6 +53,9 @@ jobs:
       - name: Deploy maven
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FILES: 'tritonus_dsp,tritonus_mp3,tritonus_remaining,tritonus_share,tritonus_vorbis'
         run: |
-          mvn deploy:deploy-file  -Durl=https://maven.pkg.github.com/marcelopio/tritonus-all -DrepositoryId=github -Dfile=dist/tritonus_vorbis-0.3.8_beta01.jar -DartifactId=tritonus_vorbis -DgroupId=org.tritonus -Dversion=0.3.8_beta1 -Dpackaging=jar -DgeneratePom=true
-                                  
+          IFS="," read -a files <<< ${{ env.FILES }}
+          for i in "${files[@]}"; do
+            mvn deploy:deploy-file -Durl=https://maven.pkg.github.com/marcelopio/tritonus-all -DrepositoryId=github -Dfile=dist/${i}-0.3.8_beta01.jar -DartifactId=${i} -DgroupId=org.tritonus -Dversion=0.3.8_beta1 -Dpackaging=jar -DgeneratePom=true  
+          done
