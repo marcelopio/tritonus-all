@@ -1,7 +1,7 @@
 name: Compile and package
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  CompipleAndPackage:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -9,6 +9,15 @@ jobs:
         with:
           distribution: 'temurin' # See 'Supported distributions' for available options
           java-version: '17'
+
+      - name: Jlayer Download
+        uses: nvoxland/jar-download-action@v1.0.0
+        with:
+          groupId: javazoom
+          artifactId: jlayer
+          version: 1.0.1
+          outputDirectory: ~/.ant/lib
+
       - name: Prepare env
         run: |
           autoconf
