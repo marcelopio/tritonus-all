@@ -1,0 +1,25 @@
+name: Compile and package
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Prepare env
+        run: |
+          autoconf
+          ./configure
+          ant -f build-dtd.xml          
+
+      - name: Build packages
+        run: ant
+
+      - name: Build vorbis
+        run: make -C src/lib/vorbis
+
+      - name: Build lame
+        run: make -C src/lib/lame

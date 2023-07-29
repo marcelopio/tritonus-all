@@ -1,0 +1,280 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>Tritonus: roadmap</title>
+    <link rel="STYLESHEET" type="text/css" href="styles.css">
+  </head>
+  <body text="#000000" link="#000070" alink="#0000FF" vlink="#0000A0" bgcolor="#FFFFFF">
+    
+    <h1>Roadmap</h1>
+    
+    <p>
+      Here is a roadmap of planned features in Tritonus.  If you need
+      features earlier, mail me. On the other hand, there is no
+      guarantee.
+    </p>
+    <p>
+      (*) indicates features that are already present in the
+      development version.
+    </p>
+    
+    <table bgcolor="black">
+      <tr bgcolor="aqua">
+	<td>
+	  <p align="center">
+	    <strong>Version</strong>
+	  </p>
+	</td>
+
+	<td>
+	  <p align="center">
+	    <strong>Audio</strong>
+	  </p>
+	</td>
+
+	<td>
+	  <p align="center">
+	    <strong>Midi</strong>
+	  </p>
+	</td>
+
+	<td>
+	  <p align="center">
+	    <strong>General</strong>
+	  </p>
+	</td>
+
+	<td>
+	  <p align="center">
+	    <strong>est. Release date</strong>
+	  </p>
+	</td>
+      </tr>
+
+      <tr valign="top" bgcolor="aqua">
+	<td valign="middle">
+	  <p align="center">
+	    0.2<br>(stable)
+	  </p>
+	</td>
+
+	<td>
+	  <ul>
+	    <li>reading and writing of .au, .aiff and .wav files</li>
+	    <li>basic playback and recording</li>
+	    <li>Alaw and mu-law converter</li>
+	    <li>MP3 decoder (pure-Java)</li>
+	  </ul>
+	</td>
+
+	<td>
+	  <ul>
+	    <li>reading of MIDI files</li>
+	    <li>basic Sequencer</li>
+	    <li>basic hardware Synthesizer support</li>
+	    <li>external MIDI I/O</li>
+	  </ul>
+	</td>
+
+	<td>
+	  <ul>
+	    <li>Java Sound 1.0 API</li>
+	  </ul>
+	</td>
+
+	<td valign="middle">
+	  <p align="center">
+	    2000/04/10
+	  </p>
+	</td>
+      </tr>
+
+
+      <tr valign="top" bgcolor="silver">
+
+	<td valign="middle">
+	  <p align="center">
+	    0.3<br>(unstable)
+	  </p>
+	</td>
+
+	<td colspan=3>
+	  This is a development branch. Expect it to accumulate the
+	  features planned for the following stable version.
+	</td>
+
+	<td valign="middle">
+	  <p align="center">
+	    ---
+	  </p>
+	</td>
+
+      </tr>
+
+
+      <tr valign="top"  bgcolor="aqua">
+
+	<td valign="middle">
+	  <p align="center">
+	    0.4<br>(stable)
+	  </p>
+	</td>
+
+	<td>
+	  <ul>
+	    <li>MP3 encoder (*)</li>
+	    <li>linear (PCM2PCM) converter(*)</li>
+	    <li>sampling rate converter</li>
+	    <li>internal floating point streaming architecture (*/2)</li>
+	    <li>ALSA support (allows hardware mixing) (*)</li>
+	    <li>smart selection of converters</li>
+	    <li>support for multiple soundcards (*)</li>
+	    <li>Mixer details</li>
+	    <li>Line details</li>
+	  </ul>
+	  Perhaps:
+	  <ul>
+	    <li>full Clip support</li>
+	    <li>Volume and balance/pan controls</li>
+	  </ul>
+	</td>
+
+	<td>
+	  <ul>
+	    <li>writing of MIDI files (*)</li>
+	    <li>handling of Sysex messages</li>
+	    <li>Sequencer capturing</li>
+	    <li>Sequencer and MIDI I/O on Mac and Windows95/98</li>
+	    <li>Software Synthesizer (Linux only) (*)</li>
+	  </ul>
+	</td>
+
+	<td>
+	  <ul>
+	    <li>Sun-compatible Service Provider mechanism (*)</li>
+	    <li>Support for GNU/Linux ppc (*)</li>
+	    <li>Split packages for easier distribution of plug-ins</li>
+	  </ul>
+	</td>
+
+	<td valign="middle">
+	  <p align="center">
+	    2000/09/??
+	  </p>
+	</td>
+
+      </tr>
+
+
+      <tr valign="top" bgcolor="silver">
+
+	<td valign="middle">
+	  <p align="center">
+	    0.5<br>(unstable)
+	  </p>
+	</td>
+
+	<td colspan=3>
+	  This is a development branch. Expect it to accumulate the
+	  features planned for the following stable version.
+	</td>
+
+	<td valign="middle">
+	  <p align="center">
+	    ---
+	  </p>
+	</td>
+
+      </tr>
+
+
+      <tr valign="top" bgcolor="aqua">
+
+	<td valign="middle">
+	  <p align="center">
+	    0.6<br>(stable)
+	  </p>
+	</td>
+
+	<td>
+	  <ul>
+	    <li>Ports (interface to system mixer)</li>
+	    <li>GSM codec (*)</li>
+	    <li>Support for multi-channel soundcards</li>
+	    <li>24 bit/96 kHz throughout the implementation (*/2)</li>
+	    <li>Support for aRts</li>
+	  </ul>
+	</td>
+
+	<td>
+	  <ul>
+	    <li>MPEG-4 structured audio</li>
+	    <li>full hardware Synthesizer support</li>
+	    <li>Soundbank handling</li>
+	  </ul>
+	</td>
+
+	<td>
+	  <ul>
+	    <li>ANT build tool and install program</li>
+	  </ul>
+	</td>
+
+	<td valign="middle">
+	  <p align="center">
+	    2000/12/??
+	  </p>
+	</td>
+
+      </tr>
+
+
+      <tr valign="top" bgcolor="silver">
+
+	<td valign="middle">
+	  <p align="center">
+	    later
+	  </p>
+	</td>
+
+	<td>
+	  <ul>
+	    <li>digital reading from CD</li>
+	    <li>AAC decoder and encoder</li>
+	    <li>other codecs</li>
+	    <li>off-line Mixer</li>
+	  </ul>
+	</td>
+
+	<td valign="middle">
+	  <p align="center">
+	    ---
+	  </p>
+	</td>
+
+	<td>
+	  <ul>
+	    <li>applet support</li>
+	    <li>Windows port</li>
+	  </ul>
+	</td>
+
+
+	<td valign="middle">
+	  <p align="center">
+	    ???
+	  </p>
+	</td>
+
+      </tr>
+
+    </table>
+
+    <hr>
+<!-- Created: Sun Mar  5 08:56:35 CET 2000 -->
+<!-- hhmts start -->
+Last modified: Fri Jan 31 09:07:25 CET 2003
+<!-- hhmts end -->
+  </body>
+</html>

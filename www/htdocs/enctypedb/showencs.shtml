@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Java Sound Encoding Database</title>
+    <link rel="STYLESHEET" type="text/css" href="../styles.css">
+  </head>
+  <body text="#000000" link="#000070" alink="#0000FF" vlink="#0000A0" bgcolor="#FFFFFF">
+    <h2 align="center">Java Sound Encoding Database</h2>
+    <p>
+      This encoding database is the effort to standardize the encoding names (IDs)
+      for use with Java Sound. In a publicly discussed 
+      <a href="process.html">process</a>, encoding proposals are
+      reviewed and may be accepted as a standard encoding.<br>
+      Encodings are used in AudioFormat to specify the format and encoding of
+      byte streams (e.g. AudioInputStream).
+    <p>
+      Everybody can <a href="addenc.html">make a proposal</a> for a new encoding.
+    <p>
+      Click on a encoding ID to see detailed information.
+    <p>
+      <!--#exec cgi="../cgi-bin/showenc.cgi" -->
+    <p>
+      <a href="./">Back to Encodings/File types main page.</a>
+  </body>
+</html>

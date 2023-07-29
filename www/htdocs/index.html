@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta name="description" content="Tritonus is an implementation of the Java Sound API for Linux. This page provides general information, downloadable distributions and developer information about Tritonus.">
+    <meta name="keywords" content="Java Sound API JavaSound Linux mp3 MPEG GSM PCM LAME">
+    <title>Tritonus: Open Source Java Sound</title>
+    <link rel="STYLESHEET" type="text/css" href="styles.css">
+  </head>
+
+  <body text="#000000" link="#000070" alink="#0000FF" vlink="#0000A0" bgcolor="#FFFFFF">
+    <h1 align="center">Tritonus: Open Source Java Sound</h1>
+
+    <p>
+      Tritonus is an implementation of the <a
+      href="http://www.javasoft.com/products/java-media/sound/index.html">Java
+      Sound API</a>.
+    </p>
+
+    <p>
+      Currently, GNU/Linux i386 and Linux/PowerPC is supported. Some
+      separately downloadable <a href="plugins.html">plugins</a> also
+      run on other JavaSound platforms.  Support for other platforms
+      is planned for the future.
+    </p>
+
+    <p>
+      Tritonus is distributed under the terms of the <a
+      href="http://www.gnu.org/copyleft/lesser.html">GNU Library
+      General Public License</a>.</p>
+
+    <p>Unsure if Tritonus can be useful for your? Read <a
+    href="how_to_use.html">How to use Tritonus</a>.</p>
+
+
+    <h2>News</h2>
+    <p>
+    <table border=0>
+	<tr>
+	  <td valign="top"><i>2003/02/09</i>:</td>
+	  <td valign="top">Beta version of the <a href="plugins.html">ogg vorbis playback plug-in</a> released.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2002/03/30</i>:</td>
+	  <td valign="top"><a href="plugins.html">First version of the CDDA plugin
+	      (ripping audio CD's) released!</a>
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2001/08/02</i>:</td>
+	  <td valign="top"><a href="plugins.html">First version of the 
+	      pure java sequencer released.</a>
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2001/04/25</i>:</td>
+	  <td valign="top"><a href="plugins.html">Fixed some bugs related to mono files in the MP3 encoding plug-in.</a>
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2001/04/22</i>:</td>
+	  <td valign="top"><a href="plugins.html">Fixed a nasty memory leak in the gsm plug-in.</a>
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2001/04/16</i>:</td>
+	  <td valign="top"><a href="plugins.html">Updates of gsm and mp3 plug-ins:
+	      The mp3 encoder plug-in contains a binary distribution for Linux. 
+	      The gsm codec has much better support for non-Tritonus Java Sound implementations.</a>
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2001/04/12</i>:</td>
+	  <td valign="top"><a href="plugins.html">MP3 encoding plug-in for Windows released.</a>
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2000/09/27</i>:</td>
+	  <td valign="top">Included experimental mp3 encoding with LAME in 
+	    <a href="http://cvs.sourceforge.net/cgi-bin/cvsweb.cgi/tritonus/?cvsroot=tritonus">CVS</a>.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2000/09/25</i>:</td>
+	  <td valign="top">Released development version 0.3.0. ALSA audio record/playback. Software
+	    synthesizer support on Linux. Tested on Linux/PowerPC. 
+	    See <a href=download.html>download page</a>.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2000/09/23</i>:</td>
+	  <td valign="top">Set up the <a href=plugins.html>plug-ins page</a>.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2000/09/19</i>:</td>
+	  <td valign="top">Moved homepage to <a href="http://tritonus.org">tritonus.org</a>.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2000/08/16</i>:</td>
+	  <td valign="top">Implemented new dynamic handling of AudioFormat.Encoding and AudioFileFormat.Type
+      as proposal for integration in the official JavaSound API.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2000/08/12</i>:</td>
+	  <td valign="top">Added GSM support on CVS.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2000/07/19</i>:</td>
+	  <td valign="top">Added first version of PCM2PCM converter on CVS.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2000/07/01</i>:</td>
+	  <td valign="top">Implemented Sun-compatible service provider mechanism. Added support
+	    for multiple soundcards with alsa audio.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2000/06/25</i>:</td>
+	  <td valign="top">First version of MidiShare MIDI in/out support in CVS.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2000/05/01</i>:</td>
+	  <td valign="top">Added Stephane to contributors. Updated status of
+	    audio file readers and writers. Updated MIDI section. Deleted
+	    CVS task.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2000/04/13</i>:</td>
+	  <td valign="top">Moved to 
+	    <a href="http://cvs.sourceforge.net/cgi-bin/cvsweb.cgi/tritonus/?cvsroot=tritonus">CVS</a>.
+	    The development history is now available there
+	    and will not maintained here anymore.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2000/04/10</i>:</td>
+	  <td valign="top">Release of Tritonus 0.2.0. Full Java Sound 1.0 compliant. 
+	    Playback and recording via ESD.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2000/04/08</i>:</td>
+	  <td valign="top">Experimental support of MIDI file (SMF) writing.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2000/04/03</i>:</td>
+	  <td valign="top">Release of Tritonus 0.1.92. Integrated or improved ulaw, alaw converters 
+	    and AIFF, AIFC, WAVE and AU file readers/writers. Building on JDK1.1.x possible again.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2000/03/24</i>:</td>
+	  <td valign="top">Release of Tritonus 0.1.91
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2000/03/18</i>:</td>
+	  <td valign="top">Small modifications to Audio part.  Major rewrite of Midi part.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2000/01/24</i>:</td>
+	  <td valign="top">Moved to sourceforge. Added contributors. Changed
+	    'administrative and misc tasks'. Changed 'Alpha releases' to
+	    'Development releases', now hosted on sourceforge, too.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2000/01/19</i>:</td>
+	  <td valign="top">Release of Tritonus 0.1.82.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>2000/01/07</i>:</td>
+	  <td valign="top">Experimental support of MIDI device i/o with 
+	    <a href="http://www.alsa-project.org">ALSA</a>.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>1999/12/18</i>:</td>
+	  <td valign="top">Added section "Alpha releases". Published version
+	    0.1.81a (has alpha mp3 support). Updated remarks on mp3 support.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>1999/12/09</i>:</td>
+	  <td valign="top">Florian joins the team. His main tasks are
+	    file readers, file writers and audio converters.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><i>1999/12/07</i>:</td>
+	  <td valign="top">Initial version published.
+	  </td>
+	</tr>
+    </table>
+  </p>
+
+
+    <h2>Features</h2>
+    <p>
+      The mandatory parts of the Java Sound API are implemented. See the
+      <a href="features.html">feature list</a> for the development state.
+	See the <a href="roadmap.html">roadmap</a> for features that are planned
+      for future versions.
+    </p>
+
+
+    <h2>How to use it</h2>
+
+    <p>Different types of users can use different parts of Tritonus in
+    a different way. See <a href="how_to_use.html">How to use
+    Tritonus</a> for details.</p>
+
+
+    <h2>Download</h2>
+    <p>
+    See the <a href="download.html">download page</a>.
+    </p>
+
+
+    <h2>Plug-ins</h2>
+    <p>
+      <a href="plugins.html">Plug-ins</a> for other Java Sound
+      implementations with some of Tritonus' features.
+    </p>
+
+
+    <h2>API documentation</h2>
+    <p>
+      <a href="http://tritonus.sourceforge.net/apidoc/">Documentation</a>
+      in javadoc format.
+    </p>
+
+
+    <h2>Mailing lists</h2>
+    <p>
+	  There are 4 <a href="mailinglists.html">mailing lists</a> for users,
+	  developers, for announcements of new versions, and for cvs changes.
+    </p>
+
+
+    <h2>Development</h2>
+    <p>
+    <a href="http://sourceforge.net/projects/tritonus/">Sourceforge project homepage</a> with
+    <ul>
+    <li><a href="http://sourceforge.net/cvs/?group_id=1390">Public CVS</a> access
+    <li><a href="http://sourceforge.net/bugs/?group_id=1390">Bug database</a>
+    <li><a href="http://sourceforge.net/pm/?group_id=1390">Task list</a> for future features and todo's
+    <li><a href="http://sourceforge.net/support/?group_id=1390">Tech support forum</a>
+    </ul>
+    </p>
+    <p>
+    When you want to participate in development, see the <a href="developer.html">Tritonus developer's page</a>.
+    </p>
+
+
+    <h2>Contact</h2>
+    <p>
+      Comments welcome ! If you find bugs, have suggestions, want to contribute or whatever,
+      send an email to
+      <a href="mailto:tritonus-user@lists.sourceforge.net">tritonus-user</a> mailing list 
+      or use the
+      <a href="http://sourceforge.net/bugs/?group_id=1390">bug database</a> or the
+      <a href="http://sourceforge.net/support/?group_id=1390">tech support forum</a> on SourceForge.
+    </p>
+    <p>
+      Have fun!!
+    </p>
+<p>
+<hr>
+<!-- hhmts start -->
+Last modified: Thu Apr  7 11:44:56 CEST 2005
+<!-- hhmts end -->
+  </body>
+</html>

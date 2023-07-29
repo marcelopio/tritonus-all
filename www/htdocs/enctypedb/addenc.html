@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Submit an encoding proposal</title>
+    <link rel="STYLESHEET" type="text/css" href="../styles.css">
+  </head>
+  <body text="#000000" link="#000070" alink="#0000FF" vlink="#0000A0" bgcolor="#FFFFFF">
+    <h2 align="center">Submit an encoding proposal</h2>
+    <p>
+      Please fill in the fields below and press the <i>Submit</i> button to add your
+      encoding to the database as a proposal. See the <a href="process.html">description
+	of the process</a> to find out what will happen after you made your submission.
+    <p>
+      Notes:
+    <ul>
+      <li>The ID may only contain letters, numbers, underscore and hyphen. You should
+	use capital letters. Encoding IDs which only differ by their case are considered
+	duplicates.
+      <li>The short description provides a long (technical) name for the encoding. Do
+	not include specification details.
+      <li>Contact is the person or company who submits the encoding to the database. 
+	It is not necessarily the creator of the encoding format.
+      <li>The comment field should contain additional specifications how to use the encoding,
+	like e.g. how the fields of AudioFormat are interpreted. Do not include
+	technical description how to implement FormatConversionProviders. You cannot include 
+	html code, but complete http and ftp URL's and email adresses are linked automatically.
+      <li>After pressing the <i>Submit</i> button, you'll have the possibility
+	to verify your proposal. Further changes can be requested by 
+	sending an email to Florian or Matthias.
+      <li>With pressing the <i>Submit</i> button you agree that your provided information
+	is made publicly available.
+    </ul>
+  </p>
+    <form action="../cgi-bin/addenc.cgi" method="POST">
+      <table border=0 cellspacing=10>
+	<tr>
+	  <td valign="top">Encoding ID:</td>
+	  <td valign="bottom"><input type="text" size="30" name="id"></td>
+	</tr><tr>
+	  <td valign="top">Short description:</td>
+	  <td valign="bottom"><input type="text" size="30" name="description"></td>
+	</tr><tr>
+	  <td valign="top">Contact name or company:</td>
+	  <td valign="bottom"><input type="text" size="30" name="name"></td>
+	</tr><tr>
+	  <td valign="top">Contact email:</td>
+	  <td valign="bottom"><input type="text" size="30" name="email"></td>
+	</tr><tr>
+	  <td valign="top">Contact URL (optional):</td>
+	  <td valign="bottom"><input type="text" size="30" name="url" value="http://"></td>
+	</tr><tr>
+	  <td valign="top">Comment (optional):</td>
+	  <td valign="top"><textarea name="comment" rows="5" cols="50"></textarea></td>
+	</tr><tr>
+	  <td valign="top" colspan=2 halign="center"><input type="submit" value="Submit"></td>
+	</tr>
+      </table>
+    </form>
+    <p>
+    <a href="showencs.shtml">Back to encodings database.</a>
+  </body>
+</html>

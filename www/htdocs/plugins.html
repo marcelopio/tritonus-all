@@ -1,0 +1,629 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>Tritonus: Plug-ins</title>
+    <link rel="STYLESHEET" type="text/css" href="styles.css">
+  </head>
+  <body text="#000000" link="#000070" alink="#0000FF" vlink="#0000A0" bgcolor="#FFFFFF">
+
+    <h1>Plug-ins</h1>
+
+    <p>These plug-ins are parts of Tritonus that can be used with
+    Sun's J2SDK 1.3 or 1.4 (and perhaps other Java Sound
+    implementations). If you have problems using them, check the
+    section 'If it doesn't work'.</p>
+
+    <p>For examples of how to use the decoder/encoder plug-ins, see <a
+    href="http://www.jsresources.org/examples/jse_encodings.html">Dealing
+    with encodings</a> in the <a
+    href="http://www.jsresources.org/examples/">Java Sound
+    Examples</a>.</p>
+
+    <p>To make the plug-ins below work, you need some base and utility
+    classes. These are packaged in
+    tritonus_share-&lt;version&gt;.jar</a>. Put it into your
+    CLASSPATH, together with the jar files specific for a certain
+    plug-in.</p>
+
+    <p>The latest versions of the <tt>.jar</tt> files require Java 1.5. There
+    are also versions that are 1.4 compatible, but may contain
+    bugs.</p>
+
+    <p>
+    <table border=0>
+		<tr>
+		  <td valign="top"><b>Platforms:</b></td>
+		  <td valign="top">all</td>
+		</tr>
+		<tr>
+		  <td valign="top"><b>Description:</b></td><td valign="top">
+		Shared classes required by all other Tritonus plug-ins.</td></tr>
+		<tr>
+		  <td valign="top"><b>Installation:</b></td>
+		  <td valign="top">Put tritonus_share-&lt;version&gt;.jar
+			into your CLASSPATH or extension directory of the JDK.</td>
+		</tr>
+		<tr>
+		  <td valign="top"><b>Download (latest, requires 1.5):</b></td>
+		  <td valign="top"><a href="tritonus_share-0.3.6.jar">tritonus_share-0.3.6.jar</a> (101 kB)</td>
+		</tr>
+		<tr>
+		  <td valign="top"><b>Download (1.4 compatible):</b></td>
+		  <td valign="top"><a href="tritonus_share.jar">tritonus_share.jar</a> (101 kB)</td>
+		</tr>
+    </table>
+  </p>
+
+
+    <h2>Ogg Vorbis Decoder</h2>
+
+    <p>
+    <table border=0>
+		<tr>
+		  <td valign="top"><b>Platforms:</b></td>
+		  <td valign="top">all</td>
+		</tr>
+		<tr>
+		  <td valign="top"><b>Description:</b></td><td valign="top">
+		A plug-in for Java that enables decoding of Ogg Vorbis bitstreams. It is based on the pure-java decoder implementation of JCraft. The decoder runs in real-time even on old machines, as long as your Java runtime has a JIT-Compiler (most contemporary have).</td></tr>
+		<tr>
+		  <td valign="top"><b>Installation:</b></td>
+		  <td valign="top">Install <a href ="http://www.jcraft.com/jorbis/index.html">Jorbis</a>. To do so, download <a href ="http://www.jcraft.com/jorbis/jorbis-0.0.12.zip">jorbis-0.0.12.zip</a>, unzip it and put jorbis-0.0.12/player/jogg-0.0.5.jar and jorbis-0.0.12/player/jorbis-0.0.12.jar into your CLASSPATH or extension directory.
+	    Then, put tritonus_share.jar (above) 
+          and tritonus_jorbis.jar into your CLASSPATH or extension directory of the JDK.</td>
+		</tr>
+		<tr>
+		  <td valign="top"><b>Download (latest, requires 1.5):</b></td>
+		  <td valign="top"><a href="tritonus_jorbis-0.3.6.jar">tritonus_jorbis-0.3.6.jar</a> (12 kB)</td>
+		</tr>
+		<tr>
+		  <td valign="top"><b>Download (1.4 compatible):</b></td>
+		  <td valign="top"><a href="tritonus_jorbis.jar">tritonus_jorbis.jar</a> (12 kB)</td>
+		</tr>
+		<tr>
+		  <td valign="top"><b>Note:</b></td>
+
+		  <td valign="top">For testing, use <a
+		  href="http://www.jsresources.org/examples/AudioPlayer.html">AudioPlayer</a>
+		  and <a
+		  href="http://www.jsresources.org/examples/AudioDecoder.html">AudioDecoder</a>
+		  from the <a href="http://www.jsresources.org/">Java Sound
+		  Resources</a>.<p>To learn more about ogg vorbis, visit <a
+		  href="http://vorbis.com/">it's main website</a>.</td>
+		</tr>
+		<tr>
+		  <td valign="top"><b>Date:</b></td>
+		  <td valign="top"> 2003/02/08</td>
+		</tr>
+    </table>
+  </p>
+
+
+    <h2>Ogg Vorbis Encoder</h2>
+
+    <p>
+    <table border=0>
+		<tr>
+		  <td valign="top"><b>Platforms:</b></td>
+		  <td valign="top">Binary distribution for Linux i386, other versions can  be compiled from the CVS.</td>
+		</tr>
+		<tr>
+		  <td valign="top"><b>Description:</b></td><td valign="top">
+		A plug-in for Java that enables encoding to Ogg Vorbis bitstreams. It is based on the native vorbis libraries.</td></tr>
+		<tr>
+		  <td valign="top"><b>Installation:</b></td>
+		  <td valign="top">Unzip the distribution. Follow the instruction in the readme file</td>
+		</tr>
+		<tr>
+		  <td valign="top"><b>Download (Linux i386, latest, requires 1.5):</b></td>
+		  <td valign="top"><a href="tritonus-vorbis-linux-0.3.6.zip">tritonus-vorbis-linux-0.3.6.zip</a> (268 kB)</td>
+		</tr>
+		<tr>
+		  <td valign="top"><b>Note:</b></td>
+
+		  <td valign="top">For testing, use <a
+		  href="http://www.jsresources.org/examples/AudioEncoder.html">AudioEncoder</a>
+		  from <a href="http://www.jsresources.org/">Java Sound
+		  Resources</a>.<p>To learn more about ogg vorbis, visit <a
+		  href="http://vorbis.com/">it's main website</a>.</td>
+		</tr>
+		<tr>
+		  <td valign="top"><b>Date:</b></td>
+		  <td valign="top"> 2004/12/26</td>
+		</tr>
+    </table>
+  </p>
+
+
+    <h2>CDDA extraction <font size="-2">(aka reading/grabbing/ripping/extracting digital audio from audio CD)</font></h2>
+
+    <p>
+    <table border=0>
+	<tr>
+	  <td valign="top"><b>Platforms:</b></td>
+	  <td valign="top">Linux/i386 (PC)</td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Description:</b></td>
+	  <td valign="top">
+	    A plug-in for Java that enables you to digitally read
+	    audio CD's.<br> The download package contains the library
+	    for Linux/i386, tritonus_cdda.jar, source code, and
+	    detailed instructions.<br> A demo program was presented at
+	    the JavaOne 2002 conference: <a
+	    href="http://www.jsresources.org/apps/ripper/">Ripping and
+	    Encoding to MP3 with the Java Sound API.</a>
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Installation:</b></td>
+	  <td valign="top">The included file readme.txt
+	    explains how to install the plugin.
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Requirements:</b></td>
+	  <td valign="top">
+	    <ul>
+	      <li>an installed version of <a
+	      href="http://www.xiph.org/paranoia/">cdparanoia</a>
+	      (cdparanoia is included in most Linux
+	      distributions). cdparanoia III, version 9.8 is
+	      required.</li>
+			  <li>tritonus_share.jar from above</li>
+	    </ul>
+	  </td></tr>
+	<tr><td valign="top"><b>Download:</b></td><td valign="top">
+	    <a href="tritonus-cdda-linux-2002-03-30.tar.gz">
+	      tritonus-cdda-linux-2002-03-30.tar.gz</a> (31 kB)
+	</td></tr>
+	<tr><td valign="top"><b>Date:</b></td><td valign="top">30 March 2002</td></tr>
+	<tr>
+	  <td valign="top"><b>Note:</b></td><td valign="top">Currently, ripping is not 
+	    available for other platforms. Please contact us if you're interested in a port.
+	</td>
+      </tr>
+    </table>
+    </p>
+    
+
+    <h2>mp3 Decoder</h2>
+
+    <p>
+    <table border=0>
+		<tr><td valign="top"><b>Platforms:</b></td><td valign="top">all</td></tr>
+		<tr><td valign="top"><b>Installation:</b></td><td valign="top">put tritonus_share.jar (above) 
+         and the two .jar files below into your CLASSPATH or extension directory of the JDK.</td></tr>
+		<tr>
+		  <td valign="top"><b>Download (latest, requires 1.5):</b></td>
+		  <td valign="top">
+			<a href="javalayer.jar">javalayer.jar</a> (90 kB) and
+			<a href="tritonus_mp3-0.3.6.jar">tritonus_mp3-0.3.6.jar</a> (20 kB)</td>
+		</tr>
+		<tr>
+		  <td valign="top"><b>Download (1.4 compatible):</b></td>
+		  <td valign="top">
+			<a href="javalayer.jar">javalayer.jar</a> (90 kB) and
+			<a href="tritonus_mp3.jar">tritonus_mp3.jar</a> (20 kB)</td>
+		</tr>
+	<tr><td valign="top"><b>Note:</b></td><td valign="top">these jar files are separated for legal reasons. 
+	    Putting them together into one is a violation of the GNU General Public License.</td></tr>
+	<tr><td valign="top"><b>Date:</b></td><td valign="top">25 April 2001</td></tr>
+    </table>
+  </p>
+
+
+    <h2>mp3 Encoder</h2>
+
+    <p>
+    <table border=0>
+	<tr><td valign="top"><b>Platforms:</b></td><td valign="top">Windows 95/98/ME/NT4/2000/XP, Linux/i386 (PC)</td></tr>
+	<tr><td valign="top"><b>Description:</b></td><td valign="top">
+		A plug-in for Java that enables mp3 encoding with Java Sound.<br>
+		The download package contains the native libraries for Windows and Linux/i386, detailed instructions, 
+		and a test program.</td></tr>
+	<tr><td valign="top"><b>Installation:</b></td><td valign="top">The included file readme.txt 
+		explains how to install the plugin and where to download an encoder.</td></tr>
+	<tr><td valign="top"><b>Requirements:</b></td>
+	  <td valign="top"><ul><li>Windows: a bladenc-compatible dll (LAME 3.89beta+ preferred) which you have 
+			to download separately. The instructions point you to where you can download it.</li>
+			<li>Linux: LAME in a recent developer version from CVS. The instructions explain
+			how to download and install it.</li>
+			<li>tritonus_share.jar from above (make sure it's the latest version)</li>
+			<li>tritonus_mp3.jar from above (mp3 decoder) 
+		          (make sure it's the latest version)</li></ul></td></tr>
+	  <tr><td valign="top"><b>Download:</b></td><td valign="top">
+		<a href="tritonus-mp3enc-2001-04-25.zip">
+		  tritonus-mp3enc-2001-04-25.zip</a> (51 kB)</td></tr>
+	  <tr><td valign="top"><b>Date:</b></td><td valign="top">25 April 2001</td></tr>
+	  <tr><td valign="top"><b>Note:</b></td><td valign="top">MP3 encoding on other Linux platforms is possible with the latest CVS version of Tritonus.</td></tr>
+	</table>
+    </p>
+    
+
+    <h2>GSM 06.10 Codec</h2>
+
+    <p>
+    <table border=0>
+      <tr><td valign="top"><b>Platforms:</b></td><td valign="top">all</td></tr>
+      <tr><td valign="top"><b>Installation:</b></td>
+
+      <td valign="top">put tritonus_share.jar (above) and tritonus_gsm.jar
+into your CLASSPATH or the extension directory.</td></tr>
+
+		<tr>
+		  <td valign="top"><b>Download (latest, requires 1.5):</b></td>
+		  <td valign="top"><a href="tritonus_gsm-0.3.6.jar">
+			  tritonus_gsm-0.3.6.jar</a> (40 kB)</td>
+		</tr>
+
+		<tr>
+		  <td valign="top"><b>Download (1.4 compatible):</b></td>
+		  <td valign="top"><a href="tritonus_gsm.jar">
+			  tritonus_gsm.jar</a> (40 kB)</td>
+		</tr>
+
+	  <tr><td valign="top"><b>Date:</b></td><td valign="top">22 April
+2001</td></tr>
+
+		<tr>
+		  <td valign="top"><b>Note:</b></td>
+
+		  <td valign="top">For examples of using the GSM codec, refer
+		  to the <a href="http://www.jsresources.org/">Java Sound
+		  Resources</a> examples <a href=
+		  "http://www.jsresources.org/examples/GSMEncoder.html">GSMEncoder</a>,
+		  <a href=
+		  "http://www.jsresources.org/examples/AudioDecoder.html">AudioDecoder</a>
+		  and <a href=
+		  "http://www.jsresources.org/examples/DecodingAudioPlayer.html">DecodingAudioPlayer</a>.</td></tr>
+
+	</table>
+  </p>
+
+    <h2>Pure-java Sequencer</h2>
+
+    <p>
+    <table border=0>
+	<tr><td valign="top"><b>Platforms:</b></td><td valign="top">all</td></tr>
+	<tr><td valign="top"><b>Installation:</b></td>
+	  <td valign="top">put tritonus_share.jar (above) and
+        tritonus_javasequencer.jar into your CLASSPATH  or the extension
+        directory.</td></tr>
+
+	<tr><td valign="top"><b>Notes:</b></td>
+          <td valign="top">Note that for this sequencer to provide stable
+	    timing, three conditions have to be met:
+	    <ol>
+	      <li><code>System.currentTimeMillis()</code> has to do what its
+		name says: provide the system time in milliseconds. Some lecacy
+		operating systems (Windows & co.) provide a timer resolution of
+		only 10, 30 or 60 ms. For information on what you can expect on
+		your operating system, see the<a
+                href="http://www.csis.hku.hk/~clyip/java/TimerTest/Results/">
+		  measurements of YIP Chi Lap [Beta]</a></li>
+
+      <li>A synthesizer or MIDI port implementation that responds
+      immediately. Testing with the synthesizer of the Sun
+      implementation resulted in horrible timing. Timing with the   
+      hardware synthesizer of a SB Life!, accessed via ALSA, was very
+      good. Working with WireProvider should be ok, too (assuming you
+      manage to meet the first point)</li>
+
+      <li>Small scheduling latencies. On the GNU/Linux system I
+      tested, even heavy file system traffic didn't lead to noticeable
+      effects on the timing. However, usage of the X server almost
+      always led to delays. This is due to the fact that the X server
+      normally runs with very high scheduling priority, stealing other
+      processes CPU time. Moving a window killed the timing. Even a 
+      running 'top' was noticeable.</li>
+    </ol>
+
+	    For testing with this sequencer, I recommend to use a recent
+	    version of MidiPlayer from the <a
+            href="http://www.jsresources.org/examples/">Java Sound
+	      Examples</a>. I was using it with command lines like this:<br>
+	    <code>java MidiPlayer -d "ALSA Synthesizer (65:0)" -S "Tritonus  
+	      Java Sequencer" /var/download/midi/master_and_servant.mid</code> 
+	  </td></tr>
+
+		<tr>
+		  <td valign="top"><b>Download (latest, requires 1.5):</b></td>  
+          <td valign="top"><a href="tritonus_javasequencer-0.3.6.jar">   
+                tritonus_javasequencer-0.3.6.jar</a> (6 kB)</td>
+		</tr>
+		<tr>
+		  <td valign="top"><b>Download (1.4 compatible):</b></td>  
+          <td valign="top"><a href="tritonus_javasequencer.jar">   
+                tritonus_javasequencer.jar</a> (6 kB)</td>
+		</tr>
+		<tr><td valign="top"><b>Date:</b></td><td valign="top">02 August 
+	    2001</td></tr>
+    </table>
+  </p>
+
+
+    <h2>Esd Mixer (EXPERIMENTAL)</h2>
+
+    <p>
+    <table border=0>
+	<tr>
+	  <td valign="top"><b>Description:</b></td>
+	  <td valign="top">An implementation of <code>javax.sound.sampled.Mixer</code> based on <code>libesd</code>. It provides (most of) the capabilities Esound provides to Java Sound. Especially, you can use this mixer to get full-duplex support for Java Sound on Linux.</td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Platforms:</b></td>
+	  <td valign="top">Linux/i386 (PC)</td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Installation:</b></td>
+	  <td valign="top">The included file readme.txt explains how to install the plugin.</td>
+	</tr>
+
+	<tr>
+	  <td valign="top"><b>Notes:</b></td>
+	  <td valign="top">This is an experimental distribution. You may encounter uncommon problems. If the standard measured (see below) do not help, please send a mail to <a href="mailto:tritonus-devel@lists.sourceforge.net">tritonus-devel</a>. If you would like a binary distribution for architecures other than i386, send a mail, too. Perhaps we can help you.</td>
+	</tr>
+
+	<tr>
+	  <td valign="top"><b>Download:</b></td>  
+	  <td valign="top"><a href = "tritonus-esd-linux-x86-2002-10-03.tar.gz">tritonus-esd-linux-x86-2002-10-03.tar.gz</a> (188 kB)</td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Requirements:</b></td>  
+	  <td valign="top">Esound (Enlightened Sound Daemon) und its library, libesd.</td>
+	</tr>
+    </table>
+  </p>
+
+
+    <h2>ALSA Mixer and Sequencer (EXPERIMENTAL)</h2>
+
+    <p>
+    <table border=0>
+	<tr>
+	  <td valign="top"><b>Description:</b></td>
+	  <td valign="top">Implementations of <code>javax.sound.sampled.Mixer</code> and <code>javax.sound.midi.MidiDevice</code> based on <a href="http://www.alsa-project.org/">ALSA</a>. It provides (most of) the capabilities of ALSA pcm and seq to Java Sound. Especially, you can use this mixer to get full-duplex support and MIDI in/out plus a very stable sequencer for Java Sound on Linux.</td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Platforms:</b></td>
+	  <td valign="top">Linux/i386 (PC)</td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Installation:</b></td>
+	  <td valign="top">The included file readme.txt explains how to install the plugin.</td>
+	</tr>
+
+	<tr>
+	  <td valign="top"><b>Notes:</b></td>
+	  <td valign="top">This is an experimental distribution. You may encounter uncommon problems. If the standard measured (see below) do not help, please send a mail to <a href="mailto:tritonus-devel@lists.sourceforge.net">tritonus-devel</a>. If you would like a binary distribution for architecures other than i386, send a mail, too. Perhaps we can help you.</td>
+	</tr>
+
+	<tr>
+	  <td valign="top"><b>Download:</b></td>  
+	  <td valign="top"><a href = "tritonus-alsa-linux-x86-2002-10-03.tar.gz">tritonus-alsa-linux-x86-2002-10-03.tar.gz</a> (188 kB)</td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Requirements:</b></td>  
+	  <td valign="top">ALSA (Advanced Linux Sound Architecture), including its user-space library, libasound.</td>
+	</tr>
+    </table>
+  </p>
+
+
+    <h2>Digital Signal Processing (EXPERIMENTAL)</h2>
+
+    <p>
+    <table border=0>
+	<tr>
+	  <td valign="top"><b>Description:</b></td>
+	  <td valign="top">A collection of classes for digital signal processing (DSP).
+For an example of how to use it, see <code>AmplitudeConverter</code> in the examples section of the <a href="http://www.jsresources.org/">Java Sound Resources</a>. (Note that currently, the example isn't detailled on the web pages and isn't part of the source distribution. You have to access the CVS to get it.)</td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Platforms:</b></td>
+	  <td valign="top">all</td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Installation:</b></td>
+	  <td valign="top">Put tritonus_share.jar (above) 
+         and tritonus_dsp.jar into your CLASSPATH or extension directory of the JDK.</td>
+	</tr>
+
+	<tr>
+	  <td valign="top"><b>Notes:</b></td>
+	  <td valign="top">This is an experimental distribution. You may encounter uncommon problems. If the standard measured (see below) do not help, please send a mail to <a href="mailto:tritonus-devel@lists.sourceforge.net">tritonus-devel</a>.</td>
+	</tr>
+
+	<tr>
+	  <td valign="top"><b>Download (latest, requires 1.5):</b></td>  
+	  <td valign="top"><a href = "tritonus_dsp-0.3.6.jar">tritonus_dsp-0.3.6.jar</a></td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Download (1.4 compatible):</b></td>  
+	  <td valign="top"><a href = "tritonus_dsp.jar">tritonus_dsp.jar</a></td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Requirements:</b></td>  
+	  <td valign="top">None.</td>
+	</tr>
+    </table>
+  </p>
+
+
+    <h2><code>AudioOutputStream</code> architecture</h2>
+
+    <p>
+    <table border=0>
+	<tr>
+	  <td valign="top"><b>Description:</b></td>
+	  <td valign="top">An add-on to the Java Sound API. The <code>AudioOutputStream</code> architecture allow writing of audio data to audio files. Supported types are .wav, .aiff and .au. It is an alternative to using <code>AudioSystem.write()</code>. The advantage over <code>AudioSystem.write()</code> is that with the <code>AudioOutputStream</code> architecture, you can code your own main loop writing to the audio file. The <code>AudioOutputStream</code> architecture implements a "push" approach for audio data, while <code>AudioSystem.write()</code> works with a "pull" approach. In many situations, a "push" approach is more flexible. For an example of using the <code>AudioOutputStream</code> architecture, see the examples on <a href="http://www.jsresources.org/">Java Sound Resources</a>. There is an examples <code>OscillatorFileAOS</code> using the <code>AudioOutputStream</code> architecture.</td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Platforms:</b></td>
+	  <td valign="top">all</td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Installation:</b></td>
+	  <td valign="top">Put tritonus_share.jar (above) 
+         and tritonus_aos.jar into your CLASSPATH or extension directory of the JDK.</td>
+	</tr>
+
+	    <!--tr>
+	      <td valign="top"><b>Notes:</b></td>
+	      <td valign="top"></td>
+	    </tr-->
+
+	<tr>
+	  <td valign="top"><b>Download (latest, requires 1.5):</b></td>  
+	  <td valign="top"><a href = "tritonus_aos-0.3.6.jar">tritonus_aos-0.3.6.jar</a> (10 kB)</td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Download (1.4 compatible):</b></td>  
+	  <td valign="top"><a href = "tritonus_aos.jar">tritonus_aos.jar</a> (10 kB)</td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Requirements:</b></td>  
+	  <td valign="top">None.</td>
+	</tr>
+    </table>
+  </p>
+
+
+    <h2>Tritonus miscellaneous</h2>
+
+    <p>
+    <table border=0>
+	<tr>
+	  <td valign="top"><b>Description:</b></td> <td
+	  valign="top">Plug-in with several service provider of
+	  Tritonus. It contains the PCM2PCM converter, A-law and U-law
+	  converters, sample rate converter, ADPCM converters, audio
+	  file readers and writers and MIDI file readers and
+	  writers. For an example of how to use the sample rate
+	  converter, see <a
+	  href="http://www.jsresources.org/examples/SampleRateConverter.html"><code>SampleRateConverter</code></a>.</td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Platforms:</b></td>
+	  <td valign="top">all</td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Installation:</b></td>
+	  <td valign="top">Put tritonus_share.jar (above) 
+         and tritonus_remaining.jar into your CLASSPATH or extension directory of the JDK.</td>
+	</tr>
+
+	    <!--tr>
+	      <td valign="top"><b>Notes:</b></td>
+	      <td valign="top"></td>
+	    </tr-->
+
+	<tr>
+	  <td valign="top"><b>Download (latest, requires 1.5):</b></td>  
+	  <td valign="top"><a href = "tritonus_remaining-0.3.6.jar">tritonus_remaining-0.3.6.jar</a> (69 kB)</td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Download (1.4 compatible):</b></td>  
+	  <td valign="top"><a href = "tritonus_remaining.jar">tritonus_remaining.jar</a> (69 kB)</td>
+	</tr>
+	<tr>
+	  <td valign="top"><b>Requirements:</b></td>  
+	  <td valign="top">None.</td>
+	</tr>
+    </table>
+  </p>
+
+
+    <h2><a name="not_working">If it doesn't work</a></h2>
+
+    <p>Most proplems are due to incorrect installation. So the first
+    thing to do is to double-check path names and class path
+    settings.</p>
+
+    <p>Then, check your installation. Use the standard programs from
+    the <a href = "http://www.jsresources.org/examples/">Java Sound
+    Examples</a>: <a href =
+    "http://www.jsresources.org/examples/audio.html">AudioPlayer</a>
+    and <a href =
+    "http://www.jsresources.org/examples/midi.html">MidiPlayer</a>. You
+    can use <code>AudioPlayer -l</code> and <code>MidiPlayer -l</code>
+    to list the available mixers or midi devices. If the desired
+    component does not appear in this list, it is still not installed
+    correctly. So double-check again.</p>
+
+    <p>Alternatively, you can use <a
+    href="http://www.jsresources.org/apps/jsinfo.html">jsinfo</a> to
+    check your installation (for plug-ins that convert audio data,
+    this is the only way). Run the program, chosse the tab 'service
+    providers', then select the kind of service provider. For plug-ins
+    that decode or encode audio data, choose
+    'FormatConversionProvider'. Now the location of the installed .jar
+    file should show up under 'Configuration Files'. If not ... check
+    your settings.</p>
+
+    <p>Note that using the '-jar' option (as in 'java -jar
+    jsinfo.jar') OVERRIDES the user class path. Therefore, the
+    following doesn't work (nor does the equivalent using the
+    CLASSPATH environment variable):</p>
+
+    <p><code>java -cp tritonus_share.jar:tritonus_gsm.jar -jar jsinfo.jar</code></p>
+
+    <p>Now you know the reason why we recommend using the extension
+    class path...</p>
+
+    <p>If the installation is ok, but your program doesn't work, use
+    the "reference" programs from the <a href =
+    "http://www.jsresources.org/examples/">Java Sound Examples</a>:
+
+    <ul>
+      <li><a href="http://www.jsresources.org/examples/AudioPlayer.html"><code>AudioPlayer</code></a></li>
+
+      <li><a href="http://www.jsresources.org/examples/MidiPlayer.html"><code>MidiPlayer</code></a></li>
+
+      <li><a href="http://www.jsresources.org/examples/GSMEncoder.html"><code>GSMEncoder</code></a></li>
+
+      <li><a href="http://www.jsresources.org/examples/Mp3Encoder.html"><code>Mp3Encoder</code></a></li>
+
+      <li><a href="http://www.jsresources.org/examples/AudioDecoder.html"><code>AudioDecoder</code></a></li>
+    </ul>
+	  
+    If these programs work, but your program doesn't, have a close
+    look at your program. You may want to copy programming techniques
+    from the examples.</p>
+
+	<p>It is also recommended to have a look at the <a
+	href="http://www.jsresources.org/faq_tritonus.html">Tritonus
+	section of the jsresources.org FAQ</a>.</p>
+
+    <p>There are some cases where is does make sense to ask for
+    specific help. These include:
+
+    <ul>
+      <li>For <code>AudioPlayer -l</code> or <code>MidiPlayer
+	  -l</code>, you get no list at all.</li>
+
+      <li>An exception occures while running
+	<code>jsinfo</code>.</li>
+
+      <li>In <code>jsinfo</code>, the .jar shows up, but the
+	respective provider does not.</li>
+    </ul>
+	  
+    In these cases send a mail to <a href =
+    "mailto:tritonus-user@lists.sourceforge.net">tritonus-user</a>.
+    Supply sufficient information so that others can understand or
+    reproduce your problem. In all three cases, try to run the program
+    with the property <code>tritonus.TraceAllExceptions</code> set to
+    <code>true</code>.  For instance, use a command line similar to
+    <code>java -Dtritonus.TraceAllExceptions=true MidiPlayer
+    -l</code>. If you see an exception, copy it into the mail.</p>
+	  
+    <hr>
+<!-- Created: Sun Mar  5 08:37:19 CET 2000 -->
+<!-- hhmts start -->
+Last modified: Sun Jul 10 13:54:17 CEST 2005
+<!-- hhmts end -->
+  </body>
+</html>

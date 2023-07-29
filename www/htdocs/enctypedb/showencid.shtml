@@ -1,0 +1,14 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Show encoding details</title>
+    <link rel="STYLESHEET" type="text/css" href="../styles.css">
+  </head>
+  <body text="#000000" link="#000070" alink="#0000FF" vlink="#0000A0" bgcolor="#FFFFFF">
+    <h2 align="center">Java Sound encoding database</h2>
+    <p>
+      <!--#exec cgi="../cgi-bin/showenc.cgi" -->
+    <p>
+      <a href="showencs.shtml">Back to encodings database.</a>
+  </body>
+</html>

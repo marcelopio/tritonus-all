@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Submit a file type proposal</title>
+    <link rel="STYLESHEET" type="text/css" href="../styles.css">
+  </head>
+  <body text="#000000" link="#000070" alink="#0000FF" vlink="#0000A0" bgcolor="#FFFFFF">
+    <h2 align="center">Submit a file type proposal</h2>
+    <p>
+      Please fill in the fields below and press the <i>Submit</i> button to add your
+      file type to the database as a proposal. See the <a href="process.html">description
+	of the process</a> to find out what will happen after you made your submission.
+    <p>
+      Notes:
+    <ul>
+      <li>The ID may only contain letters, numbers, underscore and hyphen. You should
+	use capital letters. File type IDs which only differ by their case are considered
+	duplicates.
+      <li>The extension should be in lowercase and has the same restrictions as the ID.
+	It may not contain a dot.<br>
+	When a file type may have several extensions (like AIFF -> aif and aiff),
+	provide the most common extension and write the alternatives in the comment
+	field. Currently, Java Sound only supports one extension per file type.<br>
+	It is only of descriptive nature.
+      <li>The short description provides a long (technical) name for the file type. Do
+	not include specification details.
+      <li>Contact is the person or company who submits the file type to the database. 
+	It is not necessarily the creator of the file format.
+      <li>The comment field should contain additional specifications how to use the file type,
+	like e.g. special considerations of supported AudioFormats. Do not include
+	technical description how to implement AudioFileWriters or AudioFileReaders. 
+	You cannot include html code, but complete http and ftp URL's and email adresses 
+	are linked automatically.
+      <li>After pressing the <i>Submit</i> button, you'll have the possibility
+	to verify your proposal. Further changes can be requested by 
+	sending an email to Florian or Matthias.
+      <li>With pressing the <i>Submit</i> button you agree that your provided information
+	is made publicly available.
+    </ul>
+  </p>
+    <form action="../cgi-bin/addtype.cgi" method="POST">
+      <table border=0 cellspacing=10>
+	<tr>
+	  <td valign="top">File Type ID:</td>
+	  <td valign="bottom"><input type="text" size="30" name="id"></td>
+	</tr><tr>
+	  <td valign="top">Filename Extension:</td>
+	  <td valign="bottom"><input type="text" size="30" name="ext"></td>
+	</tr><tr>
+	  <td valign="top">Short description:</td>
+	  <td valign="bottom"><input type="text" size="30" name="description"></td>
+	</tr><tr>
+	  <td valign="top">Contact name or company:</td>
+	  <td valign="bottom"><input type="text" size="30" name="name"></td>
+	</tr><tr>
+	  <td valign="top">Contact email:</td>
+	  <td valign="bottom"><input type="text" size="30" name="email"></td>
+	</tr><tr>
+	  <td valign="top">Contact URL (optional):</td>
+	  <td valign="bottom"><input type="text" size="30" name="url" value="http://"></td>
+	</tr><tr>
+	  <td valign="top">Comment (optional):</td>
+	  <td valign="top"><textarea name="comment" rows="5" cols="50"></textarea></td>
+	</tr><tr>
+	  <td valign="top" colspan=2 halign="center"><input type="submit" value="Submit"></td>
+	</tr>
+      </table>
+    </form>
+    <p>
+    <a href="showtypes.shtml">Back to file types database.</a>
+  </body>
+</html>

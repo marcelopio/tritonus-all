@@ -1,0 +1,421 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>Tritonus: Developer Information</title>
+    <link rel="STYLESHEET" type="text/css" href="styles.css">
+  </head>
+  <body text="#000000" link="#000070" alink="#0000FF" vlink="#0000A0" bgcolor="#FFFFFF">
+
+    <h1>Tritonus Developer Information</h1>
+
+    <p>
+      Tritonus is a clean room open source implementation of the Java
+      Sound 1.0 API for Linux. It is released under the GNU Library
+      General Public License.
+    </p>
+
+    <p>
+      Tritonus is far from being complete and perfect. So volunteers
+      are welcome. This page is intended to coordinate the efforts.
+    </p>
+
+
+    <h1>Coordinators</h1>
+
+    <dl>
+      <dt>Main coordinator:</dt>
+      <dd><a href="mailto:Matthias.Pfisterer@gmx.de">Matthias Pfisterer</a></dd>
+      <dt>audio file handling and converters:</dt>
+      <dd><a href="http://www.bome.com/email.html">Florian Bomers</a></dd>
+
+      <dt>mp3 decoder:</dt>
+      <dd><a href="mailto:ebsp@iname.com">JavaZOOM</a></dd>
+
+      <dt><a href="http://www.grame.fr/MidiShare">MidiShare</a> implementation:</dt>
+      <dd><a href="mailto:letz@grame.fr">Stephane Letz</a></dd>
+    </dl>
+
+<!--
+    <h1>Status</h1>
+
+    <dl>
+      <dt>javax.sound.midi</dt>
+      <dd>[fully implemented]</dd>
+
+      <dt>javax.sound.midi.spi</dt>
+      <dd>[fully implemented]</dd>
+
+      <dt>javax.sound.sampled</dt>
+      <dd>[fully implemented]</dd>
+
+      <dt>javax.sound.sampled.spi</dt>
+      <dd>[fully implemented]</dd>
+
+      <dt>Audio file reading</dt>
+      <dd>[fully implemented]</dd>
+
+      <dt>Audio file writing</dt>
+      <dd>[fully implemented]</dd>
+
+      <dt>MIDI file reading</dt>
+      <dd>[fully implemented]</dd>
+
+      <dt>MIDI file writing</dt>
+      <dd>[fully implemented]</dd>
+
+    </dl>
+-->
+    <h1>Audio tasks</h1>
+
+    <h2>Audio file support</h2>
+
+    <p>
+      Currently supported are .au, .aiff and .wav (reading and
+      writing). There is currently some reasoning how data in
+      additional chunks can be reflected on the Java side.
+    </p>
+
+    <p>
+      In general, for supporting a new file format in Java Sound, you
+      have to implement the
+      javax.sound.sampled.spi.AudioFileReader interface for
+      reading and the javax.sound.sampled.spi.AudioFileWriter
+      interface for writing. 
+      For implementing file readers and writers for
+      Tritonus, use Tritonus source code as a reference, not Sun
+      source code. If you have troubles with buffered vs. unbuffered
+      streams, look at how the javax.sound.sampled.AudioSystem
+      class is implemented in Tritonus or ask Florian.
+    </p>
+
+    <p>
+      To use new audio file support, change the files
+      src/packaging/core/META-INF/service/ and rebuild the jar
+      files.
+    </p>
+
+    <p>
+      Descriptions of audio file formats:
+    </p>
+
+    <ul>
+      <li><a href="http://home.sprynet.com/~cbagwell/audio.html">Audio File Format FAQ</a></li>
+      <li><a href="http://home.sprynet.com/~cbagwell/AudioFormats.html">Audio File Formats FAQ</a></li>
+      <li><a href="http://www.sonicspot.com/guide/fileformatlist.html">The sonic spot</a></li>
+      <li><a href="http://www.wotsit.org/">Wotsit's Format</a></li>
+      <li><a href="http://cuiwww.unige.ch/OSG/info/AudioFormats/">The CWI Audio File Formats Guide</a></li>
+      <li><a href="http://home.sprynet.com/~cbagwell/sox.html">SoX - Sound eXchange</a> (source code is always the best reference ;-) )</li>
+    </ul>
+
+
+    <h2>Audio server support</h2>
+
+    <p>
+      Unlike the sun implementation of Java Sound, Tritonus does not
+      have its own mixing engine. It generally relies on mixing
+      engines available somewhere in the operating system. This has
+      the advantage of integrating seamlessly into the existing
+      infrastructure
+    </p>
+
+    <p>
+      Adding support for a new audio server requires implementing the
+      interfaces Mixer, SourceDataLine, TargetDataLine and Clip plus
+      helper interfaces like MixerProvider and FloatControl. If you
+      want to do this, you might have a look at how the existing
+      implementation (esd and alsa) is organized.
+    </p>
+
+    <ul>
+
+      <li><strong>Network audio system (nas)</strong>
+	<p>
+	  NAS is an old but quite poweful audio server. It uses an
+	  event-oriented protocol similar to the X protocol.
+	</p>
+	<p>
+	  Playback is unstable: protocoll errors after some minutes,
+	  presumably race conditions. Recording and Clips are
+	  missing. Volume control is designed but not yet completely
+	  implemented. Nice to have: a pure-java client-side library.
+	</p>
+	<p>
+	  NAS is no longer supported by Tritonus.
+	</p>
+      </li>
+
+      <li><strong>Enlightenment sound daemon (esd)</strong>
+	<p>
+	  Esd is a relatively simple, mainly stream-oriented audio
+	  server. It is now part of the <a
+	  href="http://www.gnome.org">GNOME project</a>. Old
+	  documentation can be found at <a
+	  href="http://www.tux.org/~ricdude/dbdocs/book1.html">The
+	  Enlightened Sound Daemon</a>. For newer docs, try to search
+	  the GNOME sites (I haven't found anything). The main
+	  references I used are the library header files, the example
+	  programs and the implementation of convenience functions in
+	  the library.
+	</p>
+	<p>
+	  In Tritonus, playback and recording are supported. Clips are
+	  supported to a limited degree. Volume control is not
+	  supported. Nice to have: a pure-java client-side library. <a
+	  href="mailto:aymnk@YAHOO.COM">Atsuhiko Yamanaka</a> has
+	  reported to have some hacks around this. It is planned to
+	  integrate this for the future. See the <a
+	  href="roadmap.html">roadmap</a>.)
+	</p>
+      </li>
+
+      <li><strong>kaudioserver</strong>
+	<p>
+	  kaudioserver is the audio server of the KDE project. It is
+	  not yet supported. I was not able to locate programming
+	  documentation. Try it at <a
+	  href="http://www.kde.org/">www.kde.org</a>.
+	</p>
+      </li>
+
+      <li><strong>arts</strong>
+	<p>
+	  arts is mainly a sound synthesis engine, but can be used as
+	  a mixing engine, too. it is now the audio server of KDE 2.X. It is on the medium-term TODO list to support it. See <a
+	  href="http://www.arts-project.org/">analog realtime
+	  synthesizer</a>.
+	</p>
+      </li>
+
+      <li><strong>YIFF</strong>
+	<p>
+	  YIFF is not yet supported. See <a
+	  href="http://fox.mit.edu/xsw/yiff/">YIFF</a>.
+	</p>
+      </li>
+
+      <li><strong>direct ALSA support</strong>
+	<p>
+	  ALSA supports sound cards with hardware mixing
+	  facilities. Support is under development. See the links on
+	  ALSA below.
+	</p>
+      </li>
+    </ul>
+
+
+    <h2>Compression and conversion support</h2>
+
+    <p>
+      Providing facilities to compress and decompress audio data and
+      to convert between encodings is done by implementing the
+      javax.sound.sampled.spi.FormatConversionProvider.
+    </p>
+
+    <p>
+      To use new format converters, change the files in
+      src/packaging/core/META-INF/service/ and rebuild the jar.
+    </p>
+
+    <p>
+      Here are some converters/codecs that come to my mind:
+    </p>
+    <ul>
+
+      <li><strong>Standard linear converter</strong>
+	<p>
+	  Implemented. This converter can convert between mono
+	  and stereo and between any channel number and mono.
+          It does conversion of big and little endian, 8, 16, 24 and 32 bit.
+          Still open: 20bit support.
+	</p>
+      </li>
+
+      <li><strong>A-law and u-law codec</strong>
+	<p>
+	  Medium priority<br>
+	  Now available in Tritonus.
+	  <a
+	  href="http://cuiwww.unige.ch/OSG/info/AudioFormats/ap10.html">Definition
+	  of A-law and u-law</a><br> <a
+	  href="http://home.sprynet.com/~cbagwell/sox.html">Also see
+	  the Sox Source code</a>
+	</p>
+      </li>
+
+      <li><strong>mp3 decoder</strong>
+	<p>
+	  Javalayer 0.0.7 has been incorporated
+	  into Tritonus.<br> <a href="http://javalayer.sourceforge.net/">Java
+	  MP3 Player Project</a><br>
+          MP3 file creation implemented by using of LAME library.
+	</p>
+      </li>
+
+      <li><strong>Sample rate converter</strong>
+	<p>
+	  Medium priority.<br> <a
+	  href="http://home.sprynet.com/~cbagwell/sox.html">Also see
+	  the Sox Source code</a>
+	</p>
+      </li>
+
+      <li><strong>ADPCM, GSM, G723, G721 and other compression schemas</strong>
+	<p>
+	  Low priority<br> <a
+	  href="http://home.sprynet.com/~cbagwell/sox.html">Also see
+	  the Sox Source code</a>
+	</p>
+    </ul>
+
+
+
+    <h1>MIDI tasks</h1>
+
+    <p>
+      Main parts of the MIDI support are now implemented based on the
+      ALSA sequencer. An implementation based on MidiShare is under development. See below.
+    </p>
+
+    <p>
+      General information on MIDI:
+    </p>
+
+    <ul>
+     <li><a href="http://crystal.apana.org.au/ghansper/midi_introduction/contents.html">An Introduction to MIDI</a></li>
+      <li><a href="http://crystal.apana.org.au/ghansper/midi_introduction/midi_messages.html">The MIDI Protocol</a></li>
+      <li><a href="http://crystal.apana.org.au/ghansper/midi_introduction/midi_file_format.html">The MIDI File Format</a></li>
+    </ul>
+
+    <p>Information about interfaces to sound card drivers:</p>
+
+    <p>
+      ALSA is preferrable, as it will be the standard Linux soundcard driver in version 2.5 of the kernel.
+    </p>
+
+    <ul>
+      <li><a href="http://www.alsa-project.org/">Advanced Linux Sound Architecture (ALSA)</a></li>
+      <li><a href="http://www.alsa-project.org/alsa/library-source/doc/alsa-lib.html">Advanced Linux Sound Architecture -
+                          Library API</a></li>
+      <li><a href="http://www.vande-pol.demon.nl/alsa/">ALSA sequencer proposal</a></li>
+      <li><a href="http://www.4front-tech.com/">Open Sound System (OSS)</a></li>
+      <li><a href="http://www.4front-tech.com/pguide/index.html">OSS Programmer's Guide</a></li>
+    </ul>
+
+    <p>Here are the main tasks:</p>
+    <ul>
+
+      <li><strong>MIDI file reading and writing</strong>
+
+	<p>
+	  Reading is implemented. Writing and handling of sysex events
+	  are experimental.
+	</p>
+      </li>
+
+      <li><strong>A software synthesis engine</strong>
+
+	<p>
+	  Perhaps <a
+	  href="http://www.goice.co.jp/member/mo/timidity/">TiMidity++</a>
+	  can be integrated. There also is a patch to TiMidity to make
+	  it act as a client of the ALSA sequencer. However, the
+	  author calls it a 'proof-of-concept' and points out that it
+	  is not a fully working solution.  Does anybody know of other
+	  software synthesizers?
+	</p>
+      </li>
+
+      <li><strong>Interface to hardware synthesizers (on sound cards)</strong>
+
+	<p>
+	  Basic playback is implemented for cards whose synth is
+	  supported by ALSA. Not yet supported is mute/solo, voice
+	  information, soundbank management and some other advanced
+	  features.
+	</p>
+      </li>
+
+      <li><strong>External MIDI IN/OUT</strong>
+
+	<p>
+	  This is basically implemented based on the ALSA sequencer
+	  (MIDI ports are supported on almost all cards that are
+	  supported by ALSA at all). However, there are some
+	  problems. MIDI IN is working, but is reported to get
+	  confused by active sensing events. MIDI OUT is not
+	  absolutely stable, too. It's supposed that there are still bugs
+	  in ALSA.
+	</p>
+      </li>
+
+      <li><strong>Next-generation synthesis engines</strong>
+
+	<p>
+	  RMF (Rich Music Format) support cannot be implemented, because the specification
+	  of the format is not published by <a href="http://www.beatnik.com/">beatnik</a> and there is no
+	  code we can build on. So, other solutions are
+	  demanded. Candidates are CSound (there are Java wrappers for
+	  it by <a href="mailto:gogins@nyc.pipeline.com">Michael
+	  Gogins</a>), <a href="http://www.arts-project.org/">arts
+	  (analog realtime synthesizer)</a> and everything around the
+	  MPEG-4 Structured Audio standard. See <a
+	  href="http://sound.media.mit.edu/mpeg4/">MPEG-4 Structured
+	  Audio</a>, <a
+	  href="http://sound.media.mit.edu/mpeg4-old/">SAOL / MPEG-4
+	  Structured Audio homepage</a>, <a
+	  href="http://www.audiomulch.com/sa/">MPEG-4 Structured Audio
+	  Page</a>
+	</p>
+      </li>
+
+    </ul>
+
+
+    <h1>Administrative and misc tasks</h1>
+
+    <ul>
+      <li><strong>Build procedure of Tritonus</strong>
+
+	<p>
+	  Tritonus currently uses autoconf. 
+	Trials with <a href="http://jakarta.apache.org/ant/">ANT</a> are under way.
+	</p>
+      </li>
+
+      <li><strong>Redesign of the web pages</strong>
+
+	<p>
+	Currently still done by Matthias and Florian.
+	  Though this task has been assigned to <a
+	  href="mailto:WCBaker@home.com">Warren</a>. Ask him if you
+	  want to help. 
+	</p>
+      </li>
+    </ul>
+
+
+    <h1>Development snapshots</h1>
+
+    <p>
+      There are <a
+      href="http://cvs.sourceforge.net/cvstarballs/tritonus-cvsroot.tar.gz">daily CVS snapshots</a>.<br>
+	For anonymous downloading via CVS, use these commands:
+<pre>
+export CVSROOT=:pserver:anonymous@cvs.tritonus.sourceforge.net:/cvsroot/tritonus
+cvs login 
+  [press enter when prompted for password]
+cvs -z3 co tritonus 
+</pre>
+
+    </p>
+
+
+
+    <hr>
+<!-- Created: Tue Dec  7 12:19:30 CET 1999 -->
+<!-- hhmts start -->
+Last modified: Thu Dec 18 10:15:02 CET 2003
+<!-- hhmts end -->
+  </body>
+</html>

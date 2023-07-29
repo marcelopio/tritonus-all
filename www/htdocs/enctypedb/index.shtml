@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Java Sound Encoding and File Type Database</title>
+    <link rel="STYLESHEET" type="text/css" href="../styles.css">
+  </head>
+  <body text="#000000" link="#000070" alink="#0000FF" vlink="#0000A0" bgcolor="#FFFFFF">
+    <h2 align="center">Java Sound Encoding and File Type Database</h2>
+    <p>
+      Java Sound has a flexible concept to extend the supported
+      file types (like WAVE or AIFF) and encodings (like PCM or ulaw). Encodings
+      and file types are referenced by unique strings as identifiers in the classes
+      AudioFormat.Encoding and AudioFileFormat.Type, respectively.
+    <p>
+      This database is an effort to provide a central list of standardized
+      identifiers. Everybody can add new proposals
+      for <a href="addenc.html">encodings</a> and <a href="addtype.html">file types</a>.
+      In a public <a href="process.html">process</a>, the proposals are reviewed.<br>
+      This database also provides additional information for each encoding and
+      file type, e.g. mandatory fields or values in AudioFormat.
+    <p>
+      Currently there are <!--#include virtual="../cgi-bin/showenc.cgi?action=count" -->
+      encodings and <!--#include virtual="../cgi-bin/showtype.cgi?action=count" --> file types
+      in the database.
+    <p>
+    <h4><a href="showencs.shtml">View encoding database</a></h4>
+    <h4><a href="showtypes.shtml">View file type database</a></h4>
+    <p>
+      <a href="../">Back to Tritonus.</a>
+
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Java Sound File Type Database</title>
+    <link rel="STYLESHEET" type="text/css" href="../styles.css">
+  </head>
+  <body text="#000000" link="#000070" alink="#0000FF" vlink="#0000A0" bgcolor="#FFFFFF">
+    <h2 align="center">Java Sound File Type Database</h2>
+    <p>
+      This database is the effort to standardize the file type names (IDs)
+      and their extensions for use with Java Sound. In a publicly discussed 
+      <a href="process.html">process</a>, file type proposals are
+      reviewed and may be accepted as a standard file type.<br>
+      File types are used in AudioFileFormat to specify the type and extension of
+      a file.
+    <p>
+      Everybody can <a href="addtype.html">make a proposal</a> for a new file type.
+    <p>
+      Click on a file type ID to see detailed information.
+    <p>
+      <!--#exec cgi="../cgi-bin/showtype.cgi" -->
+    <p>
+      <a href="./">Back to Encodings/File types main page.</a>
+  </body>
+</html>
