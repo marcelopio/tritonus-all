@@ -1,8 +1,5 @@
 name: Compile and package
-on:
-  push:
-    tags:
-      - '*'
+on: [push]
 jobs:
   CompipleAndPackage:
     runs-on: ubuntu-latest
