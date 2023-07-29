@@ -4,15 +4,15 @@ jobs:
   CompipleAndPackage:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Jlayer Download
         uses: nvoxland/jar-download-action@v1.0.0
         with:
           groupId: javazoom
           artifactId: jlayer
           version: 1.0.1
-          outputDirectory: $HOME/.ant/lib
+          outputDirectory: .ant/lib
 
-      - uses: actions/checkout@v3
       - uses: actions/setup-java@v3
         with:
           distribution: 'temurin' # See 'Supported distributions' for available options
@@ -20,6 +20,7 @@ jobs:
 
       - name: Prepare env
         run: |
+          mv .ant $HOME
           autoconf
           ./configure
           ant -f build-dtd.xml          
