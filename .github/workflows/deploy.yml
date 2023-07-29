@@ -53,5 +53,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          mvn deploy:deploy-file  -Durl=file://C:\m2-repo -DrepositoryId=github -Dfile=dist/tritonus_vorbis-0.3.8_beta01.jar -DartifactId=tritonus_vorbis -DgroupId=org.tritonus -Dversion=0.3.8_beta1 -Dpackaging=jar -DgeneratePom=true
+          mvn deploy:deploy-file  -Durl=https://maven.pkg.github.com/marcelopio/tritonus-all -DrepositoryId=github -Dfile=dist/tritonus_vorbis-0.3.8_beta01.jar -DartifactId=tritonus_vorbis -DgroupId=org.tritonus -Dversion=0.3.8_beta1 -Dpackaging=jar -DgeneratePom=true
                                   
