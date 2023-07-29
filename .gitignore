@@ -19,4 +19,4 @@ eclipse_build.xml
 .idea
 *-swp
 *.o
-*.so*
+lib*.so*
